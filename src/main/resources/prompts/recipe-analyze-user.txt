@@ -1,0 +1,3 @@
+이 영상을 분석해 레시피를 작성하세요.
+{{durationHint}}
+{{feedbackSection}}

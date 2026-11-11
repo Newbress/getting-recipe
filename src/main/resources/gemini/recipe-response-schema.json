@@ -1,0 +1,36 @@
+{
+  "type": "object",
+  "properties": {
+    "isRecipe": { "type": "boolean", "description": "요리/레시피 영상이면 true" },
+    "title": { "type": ["string", "null"], "description": "레시피 제목" },
+    "servings": { "type": ["integer", "null"], "description": "영상에서 확인된 인분 수. 모르면 null" },
+    "ingredients": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "amount": { "type": ["number", "null"], "description": "수량. 영상에 없으면 null" },
+          "unit": { "type": ["string", "null"] },
+          "source": { "type": "string", "enum": ["SPEECH", "CAPTION", "VISUAL_ESTIMATE"] },
+          "isEstimated": { "type": "boolean" }
+        },
+        "required": ["name", "amount", "unit", "source", "isEstimated"]
+      }
+    },
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "order": { "type": "integer" },
+          "description": { "type": "string" },
+          "startSec": { "type": "integer", "description": "영상에서 이 단계가 시작되는 시점(초)" }
+        },
+        "required": ["order", "description", "startSec"]
+      }
+    },
+    "tips": { "type": "array", "items": { "type": "string" } }
+  },
+  "required": ["isRecipe", "title", "servings", "ingredients", "steps", "tips"]
+}

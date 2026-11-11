@@ -23,12 +23,15 @@ spring:
 gemini:
   api-key: ${GEMINI_API_KEY:}
   base-url: https://generativelanguage.googleapis.com
-  # TODO(3단계): 공식 문서(video-understanding)를 확인해 기본 모델을 확정한다
-  model: ${GEMINI_MODEL:gemini-2.5-flash}
+  # 공식 문서(models) 기준 현재 권장 모델. gemini-2.5-flash 는 deprecated 라서 사용하지 않는다
+  model: ${GEMINI_MODEL:gemini-3.8-flash}
   timeout-seconds: 120
+  # true 면 Gemini 를 호출하지 않고 샘플 레시피를 반환한다 (로컬 개발용)
+  mock: ${GEMINI_MOCK:false}
 
 youtube:
   api-key: ${YOUTUBE_API_KEY:}
+  base-url: https://www.googleapis.com
 
 management:
   endpoints:

@@ -1,0 +1,1 @@
+영상 길이는 약 {{durationSec}}초({{durationMmss}})입니다. 모든 startSec 은 이 범위 안이어야 합니다.
