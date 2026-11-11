@@ -1,0 +1,37 @@
+spring:
+  application:
+    name: getting-recipe
+  profiles:
+    default: local
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate   # 스키마는 Flyway가 관리한다
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: UTC
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+
+# Gemini 설정 (API 키는 환경변수로만 주입한다)
+gemini:
+  api-key: ${GEMINI_API_KEY:}
+  base-url: https://generativelanguage.googleapis.com
+  # TODO(3단계): 공식 문서(video-understanding)를 확인해 기본 모델을 확정한다
+  model: ${GEMINI_MODEL:gemini-2.5-flash}
+  timeout-seconds: 120
+
+youtube:
+  api-key: ${YOUTUBE_API_KEY:}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info

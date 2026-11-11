@@ -1,0 +1,5 @@
+# prod 환경: main 브랜치 배포. 모든 접속 정보는 환경변수로 주입한다.
+logging:
+  level:
+    root: WARN
+    com.gettingrecipe: WARN

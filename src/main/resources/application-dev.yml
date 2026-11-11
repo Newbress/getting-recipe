@@ -1,0 +1,5 @@
+# dev 환경: dev 브랜치 배포. 모든 접속 정보는 환경변수로 주입한다.
+logging:
+  level:
+    root: INFO
+    com.gettingrecipe: DEBUG

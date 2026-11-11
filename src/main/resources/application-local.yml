@@ -1,0 +1,7 @@
+# 로컬 개발: docker-compose PostgreSQL 사용. 접속 정보는 프로젝트 루트의 .env에서 읽는다.
+spring:
+  config:
+    import: optional:file:.env[.properties]
+logging:
+  level:
+    com.gettingrecipe: DEBUG

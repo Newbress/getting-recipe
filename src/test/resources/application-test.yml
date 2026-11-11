@@ -1,0 +1,10 @@
+# 테스트: 데이터소스는 Testcontainers(@ServiceConnection)가 주입한다.
+spring:
+  datasource:
+    url:
+    username:
+    password:
+gemini:
+  api-key: test-key
+youtube:
+  api-key: test-key
